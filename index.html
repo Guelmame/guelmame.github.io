@@ -584,6 +584,45 @@ nav {
 .research-section .topics {
   margin-bottom: 22px;
 }
+
+/* Clear separation for the About page. */
+.intro-copy {
+  display: grid;
+  gap: 20px;
+}
+.intro-copy p {
+  margin: 0;
+  text-align: justify;
+  line-height: 1.9;
+  hyphens: auto;
+}
+#Home .contact-section {
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+#Home .research-section {
+  margin-top: 52px;
+  padding-top: 40px;
+}
+#Home .research-section .topics {
+  margin: 0 0 24px;
+}
+#Home .research-section .paragraph {
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.secondary-page > h2,
+.secondary-page .section-heading {
+  margin-bottom: 38px;
+}
+.secondary-page .journal-heading {
+  margin-top: 64px;
+}
+@media (max-width: 600px) {
+  .intro-copy { gap: 18px; }
+  #Home .contact-section { margin-top: 36px; margin-bottom: 42px; }
+  #Home .research-section { margin-top: 40px; padding-top: 32px; }
+}
 </style>
 <noscript><style>.page{display:block}</style></noscript>
 </head>
@@ -591,22 +630,36 @@ nav {
 <header class="wave-cover"><img class="wave-cover-image" src="Wave.jpeg" alt="Ocean wave" fetchpriority="high"><div class="cover-content">
 <h1>Billel Guelmame</h1>
 <p class="role">Postdoctoral associate at NYU Abu Dhabi</p>
-</div></header><nav aria-label="Main navigation"><div class="nav-links">
+</div></header>
+
+<nav aria-label="Main navigation"><div class="nav-links">
 <a href="#Home">About</a><a href="#Publications">Publications</a><a href="#CV">CV</a><a href="#Teaching">Teaching</a><a href="#Activities">Activities</a>
-</div></nav><main><div id="Home" class="page active">
-<section class="intro-grid"><div><p class="paragraph-large aligned-paragraph">I am a postdoctoral associate at New York University Abu Dhabi, working with <a href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/taoufik-hmidi.html" target="_blank" rel="noopener noreferrer">Taoufik Hmidi</a>. Previously, I held a postdoctoral position at École Normale Supérieure de Lyon with <a href="http://perso.ens-lyon.fr/julien.vovelle/" target="_blank" rel="noopener noreferrer">Julien Vovelle</a>. I completed my PhD at Université Côte d’Azur under the supervision of <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" rel="noopener noreferrer">Didier Clamond</a> and <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" rel="noopener noreferrer">Stéphane Junca</a>, and subsequently held a teaching and research position (ATER) there.</p></div>
-<aside class="portrait-wrap"><div class="image-container"><img alt="Billel Guelmame" src="Guelmame.jpg"></div></aside></section><section class="contact-section"><div>
+</div></nav>
+
+<main><div id="Home" class="page active">
+<section class="intro-grid"><div class="intro-copy">
+<p class="paragraph-large aligned-paragraph">I am a postdoctoral associate at New York University Abu Dhabi, where I work with <a href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/taoufik-hmidi.html" target="_blank" rel="noopener noreferrer">Taoufik Hmidi</a>. Previously, I held a postdoctoral position at École Normale Supérieure de Lyon with <a href="http://perso.ens-lyon.fr/julien.vovelle/" target="_blank" rel="noopener noreferrer">Julien Vovelle</a>.</p>
+<p class="paragraph-large aligned-paragraph">I completed my PhD at Université Côte d’Azur under the supervision of <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" rel="noopener noreferrer">Didier Clamond</a> and <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" rel="noopener noreferrer">Stéphane Junca</a>. I subsequently held a teaching and research position (ATER) there.</p>
+</div>
+<aside class="portrait-wrap"><div class="image-container"><img alt="Billel Guelmame" src="Guelmame.jpg"></div></aside></section>
+
+<section class="contact-section"><div>
 <p class="eyebrow">Contact &amp; profiles</p>
 <span class="contact-email">billel.guelmame@nyu.edu</span>
 </div>
 <div class="profile-links">
 <a href="https://orcid.org/0000-0003-0711-4927" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/ORCIDiD.webp" alt="" width="18" height="18"><span>orcid.org/0000-0003-0711-4927</span></a><a href="https://www.researchgate.net/profile/Billel-Guelmame" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/researchgate.jpg" alt="" width="18" height="18"><span>researchgate.net/profile/Billel-Guelmame</span></a><a href="https://scholar.google.com/citations?user=sfPv708AAAAJ" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/Google_Scholar.png" alt="" width="18" height="18"><span>scholar.google.com/citations?user=sfPv708AAAAJ</span></a>
-</div></section><section class="research-section" aria-labelledby="research-title"><h2 id="research-title">Research interests</h2>
+</div></section>
+
+<section class="research-section" aria-labelledby="research-title"><h2 id="research-title">Research interests</h2>
 <div class="topics">
 <span>Hyperbolic PDEs</span><span>Stochastic PDEs</span><span>Water waves</span><span>Fractional BV spaces</span><span>Nonlinear equations</span><span>Singular limits</span>
 </div>
-<p class="paragraph aligned-paragraph">My research focuses on deterministic and stochastic nonlinear partial differential equations. I study the regularity of entropy solutions to hyperbolic equations, particularly in fractional BV spaces, as well as regularisations and singular limits. I also work on water-wave models in the shallow-water regime. That watery theme runs through my name: Billel (Arabic: بلال) means “wet” or “dew”, while Guelmame is an Amazigh word meaning “lake” or “pond”.</p></section>
+<p class="paragraph aligned-paragraph">My research focuses on deterministic and stochastic nonlinear partial differential equations. I study the regularity of entropy solutions to hyperbolic equations, particularly in fractional BV spaces, as well as regularisations and singular limits. I also work on water-wave models in the shallow-water regime.</p>
+<p class="paragraph aligned-paragraph">The watery theme continues in my name: <i>Billel</i> (Arabic: بلال) means “wet” or “dew”, while <i>Guelmame</i> is an Amazigh word meaning “lake” or “pond”.</p></section>
+
 </div>
+
 <section id="Publications" class="page secondary-page" aria-label="Publications"><div class="section-heading"><div><h2 id="publications-title">Preprints</h2></div></div>
 <ol start="16" reversed class="journal-list">
 <li class="aligned-paragraph"><div>
@@ -710,7 +763,9 @@ nav {
                flux.
              </b><br><a href="https://arxiv.org/abs/2402.14967" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a><a href="https://hal.archives-ouvertes.fr/hal-01943834" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a><a href="https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0017/0008/a006" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Commun. Math. Sci.</i> (2019)</a>
 </div></li>
-</ol></section><div id="CV" class="page secondary-page">
+</ol></section>
+
+<div id="CV" class="page secondary-page">
 <h2>Curriculum vitae</h2>
 <p class="paragraph-large aligned-paragraph"><a href="CV_Guelmame.pdf" target="_blank" rel="noopener noreferrer">Download my CV (PDF)</a>.</p>
 <ul>
@@ -731,6 +786,7 @@ nav {
 <b>September 2012 – June 2015:</b> Bachelor’s degree, Mostefa Ben Boulaïd University, Batna, Algeria.</li>
 </ul>
 </div>
+
 <div id="Teaching" class="page secondary-page">
 <h2>Teaching</h2>
 <ul>
@@ -777,6 +833,7 @@ nav {
 </li>
 </ul>
 </div>
+
 <div id="Activities" class="page secondary-page">
 <h2>Reviewing</h2>
 <ul>
@@ -797,7 +854,12 @@ nav {
 <b>2019:</b> Co-organiser of the <a href="https://univ-cotedazur.fr/laboratoires/laboratoire-jean-alexandre-dieudonne-ljad-1" target="_blank" rel="noopener noreferrer">LJAD</a> PhD student colloquium in Barcelonnette, France.</li>
 </ul>
 </div>
-<div class="university-logo"><a href="https://nyuad.nyu.edu/" target="_blank" rel="noopener noreferrer" aria-label="New York University Abu Dhabi"><img src="hNYUAD.png" alt="New York University Abu Dhabi" width="400" height="120" loading="lazy"></a></div></main><footer class="site-footer"><span>Updated September 2026</span></footer><script>
+
+<div class="university-logo"><a href="https://nyuad.nyu.edu/" target="_blank" rel="noopener noreferrer" aria-label="New York University Abu Dhabi"><img src="hNYUAD.png" alt="New York University Abu Dhabi" width="400" height="120" loading="lazy"></a></div>
+
+</main><footer class="site-footer"><span>Updated September 2026</span></footer>
+
+<script>
 const pages = [...document.querySelectorAll('.page')];
 const links = [...document.querySelectorAll('.nav-links a')];
 function showPage() {
