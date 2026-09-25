@@ -1,882 +1,423 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Billel Guelmame | Mathematics</title><meta name="description" content="Billel Guelmame, postdoctoral associate at NYU Abu Dhabi. Research on nonlinear PDEs, hyperbolic conservation laws, stochastic equations and water waves."><link rel="icon" href="https://guelmame.perso.math.cnrs.fr/favicon.ico"><style>
+:root { --ink:#172f50; --muted:#52657c; --accent:#145fc4; --paper:#f8faff; --line:#d8e2f0; --soft:#edf3fc; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:100px; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.75; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:4px; }
+a:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+nav { max-width:1200px; margin:auto; padding:27px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid var(--line); }
 
-<html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Billel Guelmame's home page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-      }
+.nav-links { display:flex; gap:25px; flex-wrap:wrap; }
+.nav-links a { color:var(--accent); font-size:14px; }
+.nav-links a[aria-current] { color:var(--accent); text-decoration:underline; text-underline-offset:8px; }
+main { max-width:1200px; padding:0 40px; margin:auto; }
+.page { display:none; }.page.active { display:block; }
+.intro-grid { display:grid; grid-template-columns:1.65fr 1fr; align-items:center; gap:80px; padding:72px 0 78px; }
+.eyebrow { font-size:11px; font-weight:bold; letter-spacing:.17em; text-transform:uppercase; color:var(--accent); margin:0 0 20px; }
+h1,h2,h3 { font-family:Georgia,'Times New Roman',serif; font-weight:normal; line-height:1.18; }
+h1 { font-size:clamp(58px,6.3vw,82px); letter-spacing:-.05em; margin:0 0 25px; }
+h1 em { color:var(--accent); font-weight:normal; }
+.role { font-size:15px; font-weight:bold; margin:0 0 22px; }.role span { color:#8b9fba; padding:0 8px; }
+.intro-grid .paragraph-large { color:var(--muted); font-size:15px; line-height:1.85; margin:0; max-width:620px; }
 
-      .aligned-paragraph a {
-        color: blue;
-      }
 
-      .page {
-        display: none;
-      }
-      .page.active {
-        display: block;
-      }
 
-      .image-container {
-        float: right;
-        margin-left: 20px;
-        margin-right: 20px;
-      }
+.portrait-wrap { margin:0; padding:0; background:none; }
+.image-container { margin:0; }.image-container img { display:block; width:100%; height:auto; border-radius:0; }
 
-      .image-container img {
-        width: 400px;
-        height: 270px;
-      }
-
-      header {
-        position: relative;
-        color: #000;
-        text-align: center;
-        padding: 260px 0;
-        z-index: 1;
-      }
-
-      .background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("Wave.jpeg");
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
-        opacity: 1;
-      }
-
-      nav {
-        background-image: linear-gradient(to bottom, #666666, #f0f0f0);
-        padding: 15px 0;
-        text-align: center;
-      }
-
-      nav ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      nav ul li {
-        display: inline;
-        margin-right: 20px;
-      }
-      nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        font-size: 1.8em;
-      }
-      nav ul li a:hover {
-        color: #666;
-      }
-
-      h1 {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: "Dancing Script", cursive;
-        font-size: 4em;
-        margin: 0;
-      }
-
-      h2 {
-        color: #314366;
-        font-size: 2em;
-        margin: 20px;
-      }
-
-      @media screen and (max-width: 767px) {
-        .image-container img {
-          width: 100%;
-          height: auto;
-          max-width: 150px;
-        }
-
-        h1 {
-          font-size: 2em;
-          bottom: 70px;
-        }
-
-        h2 {
-          font-size: 1.6em;
-        }
-      }
-
-      .aligned-paragraph {
-        text-align: justify;
-        margin-right: 10px;
-        hyphens: auto;
-      }
-
-      .paragraph {
-        font-size: 1em;
-        line-height: 1.6;
-        margin: 20px;
-      }
-
-      .paragraph-large {
-        font-size: 1.3em;
-        margin: 20px;
-      }
-
-      .paragraph-footer {
-        color: #000000;
-        font-size: 0.9em;
-
-        margin: 20px;
-      }
-
-      .custom-image-container {
-        text-align: center;
-      }
-
-      .custom-image-container a {
-        margin-right: 40px;
-      }
-
-      ul {
-        font-size: 1em;
-      }
-      .footnote {
-        font-size: 0.9em;
-        color: #444;
-      }
-      .small-hr {
-        width: 300px;
-        margin: 10px 20px;
-      }
-    </style>
-
-    <link
-      rel="icon"
-      href="favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="favicon.ico"
-      type="image/x-icon"
-    />
-  </head>
-
-  <body onresize="storeZoomLevel()">
-    <header>
-      <div class="background-image"></div>
-
-      <h1 tyle="font-weight: bold;">Billel Guelmame</h1>
-    </header>
-
-    <nav>
-      <ul>
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#CV">CV</a></li>
-        <li><a href="#Teaching">Teaching</a></li>
-        <li><a href="#Activities">Activities</a></li>
-
-      </ul>
-    </nav>
-
-    <div id="Home" class="page active">
-      <div class="image-container">
-        <img
-          alt="photo"
-          src="Guelmame.jpg"
-        />
-      </div>
-
-      <p class="paragraph-large aligned-paragraph">
-      I'm a post-doctoral associate at New York University Abu Dhabi,
-        working with
-        <a href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/taoufik-hmidi.html" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Taoufik Hmidi</a>.
-        Previously, I held a post-doctoral position at École Normale Supérieure de Lyon
-         with 
-          <a href="http://perso.ens-lyon.fr/julien.vovelle/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Julien Vovelle</a>. 
-          Before that, I completed my PhD at the University Côte d'Azur with <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-            >Didier Clamond</a>
-          and
-          <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-            >Stéphane Junca</a> 
-             and held an ATER (teaching and research) position there.
+h2 { font-size:34px; letter-spacing:-.025em; margin:0; }
+.research-section { padding:46px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 1.3fr; gap:65px; }
+.research-section h2 { font-size:29px; }.research-section .paragraph { color:var(--muted); font-size:14px; margin:0 0 16px; }
+.topics { display:flex; gap:8px; flex-wrap:wrap; margin-top:24px; }.topics span { font-size:11px; padding:4px 10px; border:1px solid #cbdaf0; border-radius:3px; }
+.footnote { color:var(--muted); font-size:11px; line-height:1.6; }.small-hr { border:0; border-top:1px solid var(--line); width:90px; margin:22px 0 12px; }.paragraph-footer { margin:0; }
+#Publications { padding:58px 0 34px; }.section-heading { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:26px; }.section-heading .eyebrow { margin-bottom:12px; }.section-note { font-size:12px; color:var(--muted); white-space:nowrap; }
 
 
 
 
+.paper-link { font-size:12px; display:inline-block; margin-top:8px; }
+.journal-heading { margin-top:56px; }.journal-list { padding-left:28px; margin:0; }.journal-list>li { padding:19px 10px 20px 10px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }.journal-list>li::marker { font-family:Georgia,serif; color:var(--accent); font-size:16px; }.journal-list b { display:block; color:var(--ink); font-family:Georgia,serif; font-weight:normal; font-size:19px; line-height:1.45; margin:6px 0; }.journal-list br { display:none; }
+.contact-section { background:var(--soft); margin:25px 0 45px; padding:34px; display:flex; justify-content:space-between; align-items:center; gap:25px; }.contact-section h2 { font-size:27px; margin-bottom:12px; }.contact-section .eyebrow { margin-bottom:12px; }.contact-email { font-size:14px; overflow-wrap:anywhere; }.profile-links { display:flex; flex-direction:column; font-size:13px; gap:9px; }
+.site-footer { max-width:1120px; margin:auto; padding:22px 0 30px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:11px; letter-spacing:.02em; }
+.secondary-page { padding:65px 0; min-height:70vh; }.secondary-page>h2 { margin-bottom:30px; }.secondary-page>ul { padding-left:22px; max-width:900px; }.secondary-page>ul>li { padding:18px 8px; border-bottom:1px solid var(--line); }.secondary-page>ul>li>b { color:var(--accent); }.secondary-page ul ul { margin-top:12px; }.secondary-page p { color:var(--muted); }.secondary-page h2:not(:first-child) { margin-top:48px; }
+@media(max-width:850px) { nav { flex-direction:column; align-items:flex-start; padding:20px 24px; gap:16px; }.nav-links { gap:18px; }main { padding:0 24px; }.intro-grid { gap:35px; padding:45px 0; }.research-section { gap:30px; }.site-footer { margin:0 24px; } }
+@media(max-width:600px) { .nav-links { gap:16px; }.nav-links a { font-size:12px; }.intro-grid { grid-template-columns:1fr; gap:30px; }.portrait-wrap { max-width:300px; margin:0; }.intro-grid h1 { font-size:66px; }.research-section { grid-template-columns:1fr; gap:26px; padding:32px 0; }.section-heading { align-items:start; }.section-note { white-space:normal; text-align:right; max-width:105px; }.contact-section { flex-direction:column; align-items:start; padding:25px; }.profile-links { flex-direction:row; flex-wrap:wrap; gap:18px; }.site-footer { flex-direction:column; gap:5px; }.role { font-size:13px; }.secondary-page { padding:40px 0; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print { .page { display:block; }nav { display:none; }.intro-grid { padding:15px 0; }body { background:white; }.secondary-page { min-height:0; } }
 
+/* Original wave cover, paired with the existing academic typography. */
+.wave-cover { position:relative; background:#172f50; height:clamp(280px,34vw,470px); overflow:hidden; }
+.wave-cover-image { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+.wave-cover::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 38%,rgba(10,30,44,.75)); pointer-events:none; }
+.cover-content { position:absolute; inset:0; z-index:1; max-width:1200px; margin:auto; padding:0 40px 32px; display:flex; align-items:flex-end; }
+.cover-content h1 { color:#fff; margin:0; font-size:clamp(46px,6.3vw,82px); text-shadow:0 2px 16px rgba(0,0,0,.25); }
+.cover-content h1 em { color:#fff; }
+nav { justify-content:center; }
+.nav-links { justify-content:center; }
+.intro-grid { padding:48px 0 30px; }
+.contact-section { margin:0 0 45px; }
+.university-logo { margin:25px 0 45px; padding:34px; text-align:center; background:#fff; border-top:1px solid var(--line); }
+.university-logo a { display:inline-block; max-width:100%; }
+.university-logo img { display:block; width:400px; max-width:100%; height:auto; }
+.site-footer { justify-content:flex-end; }
+@media(max-width:850px) { nav { align-items:center; }.cover-content { padding:0 24px 28px; } }
+@media(max-width:600px) { .wave-cover { height:290px; }.cover-content h1 { max-width:340px; line-height:1.12; }.intro-grid { padding:32px 0; }.university-logo { padding:28px 12px; } }
+@media print { .wave-cover { height:220px; }.journal-list>li { break-inside:avoid; } }
 
-      </p>
+/* Shared page footer and single-column contact / research content. */
+.contact-section { display:block; text-align:left; }
+.profile-links { display:flex; flex-direction:column; align-items:flex-start; flex-wrap:nowrap; gap:10px; margin-top:16px; }
+.profile-links a { display:flex; align-items:center; gap:9px; max-width:100%; }
+.profile-links img { width:18px; height:18px; flex-shrink:0; object-fit:contain; }
+.profile-links span { overflow-wrap:anywhere; min-width:0; }
+.research-section { display:block; text-align:left; }
+.research-section h2 { margin-bottom:24px; }
+.research-section .topics { margin-top:22px; }
+#Publications { min-height:0; }
 
-      <br />
+/* Upright, understated cover typography with the position directly below. */
+.cover-content { flex-direction:column; align-items:flex-start; justify-content:flex-end; gap:12px; }
+.cover-content h1 { font-family:"Helvetica Neue",Arial,Helvetica,sans-serif; font-style:normal; font-weight:600; letter-spacing:-.035em; line-height:1.12; }
+.cover-content .role { margin:0; color:#fff; font-weight:700; font-size:clamp(13px,1.6vw,18px); text-shadow:0 1px 8px rgba(0,0,0,.5); }
+.cover-content .role span { color:#fff; }
+@media(max-width:600px) { .cover-content { gap:10px; }.cover-content .role span { padding:0 4px; } }
 
-      <p class="paragraph aligned-paragraph">
-        New York University Abu Dhabi
-        <br />
-        Abu Dhabi, UAE
-        <br />
-
-        billel.guelmame@nyu.edu
-        <br />
-        <a href="https://orcid.org/0000-0003-0711-4927" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->
-          <img
-            src="ORCIDiD.webp"
-            style="width: 1em; margin-right: 0.5em; vertical-align: text-bottom"
-          />orcid.org/0000-0003-0711-4927</a
-        >
-        <br />
-        <a
-          href="https://www.researchgate.net/profile/Billel-Guelmame"
-          target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-
-        >
-          <img
-            src="researchgate.jpg"
-            style="width: 1em; margin-right: 0.5em; vertical-align: text-bottom"
-          />researchgate.net/profile/Billel-Guelmame</a
-        >
-        <br />
-        <a
-          href="https://scholar.google.com/citations?user=sfPv708AAAAJ"
-          target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-
-        >
-          <img
-            src="Google_Scholar.png"
-            style="width: 1em; margin-right: 0.5em; vertical-align: text-bottom"
-          />scholar.google.com/citations?user=sfPv708AAAAJ</a
-        >
-      </p>
-
-      <br />
-
-      <h2>My research</h2>
-
-      <p class="paragraph aligned-paragraph">
-        My research interests lie in the analysis of both deterministic and
-        stochastic nonlinear partial differential equations. Specifically, I
-        work on the regularity of entropy solutions for certain nonlinear
-        hyperbolic equations within fractional BV spaces. Additionally, my
-        interests extend to the study of perturbations of hyperbolic equations
-        and their singular limits. Interestingly, the watery theme in my name,
-        <i>Billel</i><sup>1</sup> <i>Guelmame</i><sup>2</sup>, seems to be in
-        perfect accord with my research. I also find myself immersed in
-        water-wave problems, particularly within the shallow-water regime.
-      </p>
-
-      <p class="paragraph aligned-paragraph">
-        I am also open to working on other equations and to expanding my
-        research area. Please feel free to contact me for possible
-        collaborations and/or discussions!
-      </p>
-
-      <footer>
-        <hr class="small-hr" />
-        <div class="footnote">
-          <p class="paragraph-footer aligned-paragraph">
-            <sup>1</sup> <i> Billel </i> (Arabic: “بلال”) is an Arabic given
-            name meaning “wet” or “dew”. <br />
-            <sup>2</sup> <i> Guelmame </i> is an Amazigh (Berber) word meaning
-            “lake” or “pond”.
-          </p>
-        </div>
-      </footer>
-
-      <br />
-
-
-
-
-
-
-<h2>Preprints</h2>
-
-<ol start="14" reversed>
-    <li class="aligned-paragraph">
-    <div>
-      P. Alphonse, B. Guelmame and J. Vovelle. 2026.
-      <b>
-        A quantitative averaging lemma for spatially dependent vector fields.
-      </b>
-      <br />
-      <a href="https://arxiv.org/abs/2604.15884" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >arXiv</a>
-      &nbsp;
-      <a href="https://hal.science/hal-05597049" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >hal</a>
-      &nbsp;
-    </div>
-  </li>
-
-   <br />
-
-
-        <li class="aligned-paragraph">
-    <div>
-      B. Guelmame, T. Hmidi, H. Houamed and F. Rousset. 2026.
-      <b>
-        Singular traveling waves for the Euler–Poisson system.
-      </b>
-      <br />
-      <a href="https://arxiv.org/abs/2604.14997" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >arXiv</a>
-      &nbsp;
-      <a href="https://hal.science/hal-05602127" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >hal</a>
-      &nbsp;
-    </div>
-  </li>
-</ol>
-
-
-
-
-      <h2>Journal Papers</h2>
-
-      <ol reversed="">
+/* Original justified paragraph treatment on About. */
+#Home .aligned-paragraph { text-align:justify; hyphens:auto; }
+#Home .contact-email { display:inline-block; color:var(--ink); }
+</style><noscript><style>.page{display:block}</style></noscript></head><body><header class="wave-cover"><img class="wave-cover-image" src="https://guelmame.perso.math.cnrs.fr/Wave.jpeg" alt="Ocean wave" fetchpriority="high"><div class="cover-content"><h1>Billel Guelmame</h1><p class="role">Postdoctoral associate at NYU Abu Dhabi</p></div></header><nav aria-label="Main navigation"><div class="nav-links"><a href="#Home">About</a><a href="#Publications">Publications</a><a href="#CV">CV</a><a href="#Teaching">Teaching</a><a href="#Activities">Activities</a></div></nav><main><div id="Home" class="page active"><section class="intro-grid"><div><p class="paragraph-large aligned-paragraph">I am a postdoctoral associate at New York University Abu Dhabi, working with <a href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/taoufik-hmidi.html" target="_blank" rel="noopener noreferrer">Taoufik Hmidi</a>. Previously, I held a postdoctoral position at École Normale Supérieure de Lyon with <a href="http://perso.ens-lyon.fr/julien.vovelle/" target="_blank" rel="noopener noreferrer">Julien Vovelle</a>. I completed my PhD at Université Côte d’Azur under the supervision of <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" rel="noopener noreferrer">Didier Clamond</a> and <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" rel="noopener noreferrer">Stéphane Junca</a>, and subsequently held a teaching and research position (ATER) there.</p></div><aside class="portrait-wrap"><div class="image-container">
+         <img alt="Billel Guelmame" src="https://guelmame.perso.math.cnrs.fr/Guelmame.jpg">
+       </div></aside></section><section class="contact-section"><div><p class="eyebrow">Contact &amp; profiles</p><span class="contact-email">billel.guelmame@nyu.edu ↗</span></div><div class="profile-links"><a href="https://orcid.org/0000-0003-0711-4927" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/ORCIDiD.webp" alt="" width="18" height="18"><span>orcid.org/0000-0003-0711-4927</span></a><a href="https://www.researchgate.net/profile/Billel-Guelmame" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/researchgate.jpg" alt="" width="18" height="18"><span>researchgate.net/profile/Billel-Guelmame</span></a><a href="https://scholar.google.com/citations?user=sfPv708AAAAJ" target="_blank" rel="noopener noreferrer"><img src="https://guelmame.perso.math.cnrs.fr/Google_Scholar.png" alt="" width="18" height="18"><span>scholar.google.com/citations?user=sfPv708AAAAJ</span></a></div></section><section class="research-section" aria-labelledby="research-title"><h2 id="research-title">Research interests</h2><div class="topics"><span>Hyperbolic PDEs</span><span>Stochastic PDEs</span><span>Water waves</span><span>Fractional BV spaces</span><span>Nonlinear equations</span><span>Singular limits</span></div><p class="paragraph aligned-paragraph">My research focuses on deterministic and stochastic nonlinear partial differential equations. I study the regularity of entropy solutions to hyperbolic equations, particularly in fractional BV spaces, as well as regularisations and singular limits. I also work on water-wave models in the shallow-water regime. That watery theme runs through my name: Billel (Arabic: بلال) means “wet” or “dew”, while Guelmame is an Amazigh word meaning “lake” or “pond”.</p></section></div><section id="Publications" class="page secondary-page" aria-label="Publications"><div class="section-heading"><div><h2 id="publications-title">Preprints</h2></div></div><ol start="16" reversed class="journal-list">
+   <li class="aligned-paragraph">
+     <div>
+       B. Guelmame. 2026.
+       <b>On the singular limit of the Camassa-Holm equation.</b>
+       <br>
+       <a href="https://arxiv.org/abs/2609.08227" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+     </div>
+   </li>
+   <li class="aligned-paragraph">
+     <div>
+       B. Guelmame and H. Houamed. 2026.
+       <b>Strong Ill-Posedness in critical and subcritical regimes for the Hunter-Saxton equation.</b>
+       <br>
+       <a href="https://arxiv.org/abs/2609.02523" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+     </div>
+   </li>
+   <li class="aligned-paragraph">
+     <div>
+       P. Alphonse, B. Guelmame and J. Vovelle. 2026.
+       <b>
+         A quantitative averaging lemma for spatially dependent vector fields.
+       </b>
+       <br>
+       <a href="https://arxiv.org/abs/2604.15884" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+        
+       <a href="https://hal.science/hal-05597049" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+        
+     </div>
+   </li>
 
     <li class="aligned-paragraph">
-    <div>
-      B. Guelmame and J. Vovelle. 2025.
-      <b>
-        A Smoluchowski–Kramers approximation for the stochastic variational wave equation.
-      </b>
-      <br />
-      <a href="https://arxiv.org/abs/2511.13567" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >arXiv</a>
-      &nbsp;
-      <a href="https://hal.science/hal-05369528" target="_blank" style="color:blue; text-decoration:none;"
-         onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-    >hal</a>
-      &nbsp; <a href="https://link.springer.com/article/10.1007/s10884-026-10517-y" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->J. Dynam. Differential Equations. (2026)</a>
-&nbsp;
-    </div>
-  </li>
+     <div>
+       B. Guelmame, T. Hmidi, H. Houamed and F. Rousset. 2026.
+       <b>
+         Singular traveling waves for the Euler–Poisson system.
+       </b>
+       <br>
+       <a href="https://arxiv.org/abs/2604.14997" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+        
+       <a href="https://hal.science/hal-05602127" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+        
+     </div>
+   </li>
+ </ol><div class="section-heading journal-heading"><h2>Journal papers</h2></div><ol reversed="" class="journal-list">
 
- <br />
+     <li class="aligned-paragraph">
+     <div>
+       B. Guelmame and J. Vovelle. 
+       <b>
+         A Smoluchowski–Kramers approximation for the stochastic variational wave equation.
+       </b>
+       <br>
+       <a href="https://arxiv.org/abs/2511.13567" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+        
+       <a href="https://hal.science/hal-05369528" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+         <a href="https://link.springer.com/article/10.1007/s10884-026-10517-y" target="_blank" rel="noopener noreferrer" class="paper-link">J. Dynam. Differential Equations. (2026)</a>
+  
+     </div>
+   </li>
 
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame and J. Vovelle.
-            <b>
-              Global dissipative martingale solutions to the variational wave
-              equation with stochastic forcing.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2403.03034" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->arXiv</a>
-            &nbsp;
-            <a href="https://hal.science/hal-04282928" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->hal</a>
-            &nbsp;
-  	     <a
-              href="https://link.springer.com/article/10.1007/s40072-024-00337-w"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Stochastics and Partial Differential Equations. (2024)</i></a
-            >
-            &nbsp;
+  <li class="aligned-paragraph">
+           <div>
+             B. Guelmame and J. Vovelle.
+             <b>
+               Global dissipative martingale solutions to the variational wave
+               equation with stochastic forcing.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2403.03034" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.science/hal-04282928" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+   	     <a href="https://link.springer.com/article/10.1007/s40072-024-00337-w" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Stochastics and Partial Differential Equations. (2024)</i></a>
+              
 
-          </div>
-        </li>
+           </div>
+         </li>
 
-        <br />
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame and H. Houamed.
+             <b> Convergence rate for a regularized scalar conservation law. </b>
+             <br>
+             <a href="https://arxiv.org/abs/2403.03794" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.science/hal-04493491" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://link.springer.com/article/10.1007/s00033-024-02259-y" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Zeitschrift für Angewandte Mathematik und Physik.</i>
+               (2024)</a>
+              
+           </div>
+         </li>
 
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame.
+             <b>
+               On a Hamiltonian regularization of scalar conservation laws.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2403.02218" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.science/hal-02512810" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://www.aimsciences.org/article/doi/10.3934/dcds.2023118" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Discrete Contin. Dyn. Syst. A.</i> (2024)</a>
+              
+           </div>
+         </li>
 
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame and H. Houamed.
-            <b> Convergence rate for a regularized scalar conservation law. </b>
-            <br />
-            <a href="https://arxiv.org/abs/2403.03794" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->arXiv</a>
-            &nbsp;
-            <a href="https://hal.science/hal-04493491" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->hal</a>
-            &nbsp;
-            <a
-              href="https://link.springer.com/article/10.1007/s00033-024-02259-y"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Zeitschrift für Angewandte Mathematik und Physik.</i>
-              (2024)</a
-            >
-            &nbsp;
-          </div>
-        </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame, S. Junca, D. Clamond and R.L. Pego.
+             <b>Global weak solutions of a Hamiltonian regularised Burgers
+               equation.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.15545" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-02478872" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://link.springer.com/article/10.1007/s10884-022-10171-0" target="_blank" rel="noopener noreferrer" class="paper-link"><i>J. Dynam. Differential Equations.</i> (2024)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame.<b>
+               Global weak solutions of the Serre–Green–Naghdi equations with
+               surface tension.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2403.02214" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.science/hal-03585433v2" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://ems.press/journals/aihpc/articles/12362954" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Annales de l'Institut Henri Poincaré C, Analyse non
+                 linéaire.</i>
+               (2023)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame.
+             <b>On the blow-up scenario for some modified Serre–Green–Naghdi
+               equations.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2403.02208" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-03264688" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://www.sciencedirect.com/science/article/pii/S0362546X2200178X" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Nonlinear Analysis.</i> (2022)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame, D. Clamond and S. Junca.
+             <b>Local well-posedness of a Hamiltonian regularisation of the
+               Saint-Venant system with uneven bottom.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.15544" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-02915262" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://dx.doi.org/10.4310/MAA.2022.v29.n3.a4" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Methods and Applications of Analysis.</i> (2022)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             C. Bourdarias, A.P. Choudhury, B. Guelmame and S. Junca.
+             <b>
+               Entropy solutions in BV<sup>s</sup> for a class of triangular
+               systems involving a transport equation.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.16820" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-02895603" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://epubs.siam.org/doi/10.1137/20M1351783" target="_blank" rel="noopener noreferrer" class="paper-link"><i>SIAM J. Math. Anal.</i> (2022)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame, D. Clamond and S. Junca.
+             <b>
+               Hamiltonian regularisation of the unidimensional barotropic Euler
+               equations.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.15261" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-02907304" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://www.sciencedirect.com/science/article/pii/S146812182100167X" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Nonlinear Anal. Real World Appl.</i> (2022)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             S. Ghoshal, B. Guelmame, A. Jana and S. Junca.
+             <b>
+               Optimal regularity for all time for entropy solutions of
+               conservation laws in BV<sup>s</sup>.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.15250" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-02495036" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
+             <a href="https://link.springer.com/article/10.1007/s00030-020-00649-5" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Nonlinear Differential Equations Appl.</i> (2020)</a>
+           </div>
+         </li>
+         <li class="aligned-paragraph">
+           <div>
+             B. Guelmame, S. Junca and D. Clamond.
+             <b>
+               Regularizing effect for conservation laws with a Lipschitz convex
+               flux.
+             </b>
+             <br>
+             <a href="https://arxiv.org/abs/2402.14967" target="_blank" rel="noopener noreferrer" class="paper-link">arXiv</a>
+              
+             <a href="https://hal.archives-ouvertes.fr/hal-01943834" target="_blank" rel="noopener noreferrer" class="paper-link">hal</a>
+              
 
-        <br />
+             <a href="https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0017/0008/a006" target="_blank" rel="noopener noreferrer" class="paper-link"><i>Commun. Math. Sci.</i> (2019)</a>
+           </div>
+         </li>
+       </ol></section><div id="CV" class="page secondary-page">
+       <h2>Curriculum vitae</h2>
 
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame.
-            <b>
-              On a Hamiltonian regularization of scalar conservation laws.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2403.02218" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->arXiv</a>
-            &nbsp;
-            <a href="https://hal.science/hal-02512810" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
->hal</a>
-            &nbsp;
-            <a
-              href="https://www.aimsciences.org/article/doi/10.3934/dcds.2023118"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Discrete Contin. Dyn. Syst. A.</i> (2024)</a
-            >
-            &nbsp;
-          </div>
-        </li>
+       <p class="paragraph-large aligned-paragraph"><a href="https://guelmame.perso.math.cnrs.fr/CV_Guelmame.pdf" target="_blank" rel="noopener noreferrer">Download my CV (PDF)</a>.</p>
 
-        <br />
+       <ul>
+         <li class="aligned-paragraph"><b>December 2024 – present:</b> Postdoctoral associate, New York University Abu Dhabi.</li>
+         <li class="aligned-paragraph"><b>September 2022 – December 2024:</b> Postdoctoral associate, École Normale Supérieure de Lyon.</li>
+         <li class="aligned-paragraph"><b>October 2020 – August 2022:</b> Teaching and research associate (ATER), Université Côte d’Azur, Nice.</li>
+         <li class="aligned-paragraph"><b>October 2017 – September 2020:</b> PhD, Université Côte d’Azur, Nice. Supervisors: <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" rel="noopener noreferrer">Didier Clamond</a> and <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" rel="noopener noreferrer">Stéphane Junca</a>. Thesis: <a href="https://tel.archives-ouvertes.fr/tel-03177654" target="_blank" rel="noopener noreferrer">On a Hamiltonian regularisation and regularity of entropy solutions
+             of some nonlinear hyperbolic equations</a>.</li>
+         <li class="aligned-paragraph"><b>September 2016 – June 2017:</b> Second year of the master’s programme, Université Côte d’Azur, Nice.</li>
+         <li class="aligned-paragraph"><b>September 2015 – June 2016:</b> First year of the master’s programme, Mostefa Ben Boulaïd University, Batna, Algeria.</li>
+         <li class="aligned-paragraph"><b>September 2012 – June 2015:</b> Bachelor’s degree, Mostefa Ben Boulaïd University, Batna, Algeria.</li>
+         </ul>
+       </div><div id="Teaching" class="page secondary-page">
+       <h2>Teaching</h2>
+       <ul>
 
-                <li class="aligned-paragraph">
-          <div>
-            B. Guelmame, S. Junca, D. Clamond and R.L. Pego.
-            <b
-              >Global weak solutions of a Hamiltonian regularised Burgers
-              equation.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.15545" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-02478872"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://link.springer.com/article/10.1007/s10884-022-10171-0"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>J. Dynam. Differential Equations.</i> (2024)</a
-            >
-          </div>
-        </li>
-        <br />
+       <li class="aligned-paragraph">
+           <b>2025–2026:</b> New York University Abu Dhabi, Abu Dhabi, UAE.
+           <ul>
+             <li>Analysis 1</li>
+           </ul>
+         </li>
+         <li class="aligned-paragraph">
+           <b>2024–2025:</b> New York University Abu Dhabi, Abu Dhabi, UAE.
+           <ul>
+             <li>Analysis 1</li>
+           </ul>
+         </li>
+         <li class="aligned-paragraph">
+           <b>2023–2024:</b> Claude Bernard University, Lyon, France.
+           <ul>
+             <li>Maths - Cursus prépa (Analysis and algebra)</li>
+           </ul>
+         </li>
+         <li class="aligned-paragraph">
+           <b>2021–2022:</b> Université Côte d’Azur, Nice, France.
+           <ul>
+             <li>Maths 2 (Linear algebra)</li>
+             <li>Maths Approfondissements 1 (Arithmetic)</li>
+             <li>Maths Approfondissements 2 (Calculus)</li>
+             <li>Maths enjeux 1 — introduction to fundamental mathematical concepts for first-year students.</li>
+             <li>Compléments de mathématiques (complex numbers)</li>
+           </ul>
+         </li>
 
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame.<b>
-              Global weak solutions of the Serre–Green–Naghdi equations with
-              surface tension.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2403.02214" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a href="https://hal.science/hal-03585433v2" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">hal</a>
-            &nbsp;
-            <a
-              href="https://ems.press/journals/aihpc/articles/12362954"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i
-                >Annales de l'Institut Henri Poincaré C, Analyse non
-                linéaire.</i
-              >
-              (2023)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame.
-            <b
-              >On the blow-up scenario for some modified Serre–Green–Naghdi
-              equations.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2403.02208" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-03264688"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://www.sciencedirect.com/science/article/pii/S0362546X2200178X"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Nonlinear Analysis.</i> (2022)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame, D. Clamond and S. Junca.
-            <b
-              >Local well-posedness of a Hamiltonian regularisation of the
-              Saint-Venant system with uneven bottom.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.15544" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-02915262"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://dx.doi.org/10.4310/MAA.2022.v29.n3.a4"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Methods and Applications of Analysis.</i> (2022)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            C. Bourdarias, A.P. Choudhury, B. Guelmame and S. Junca.
-            <b>
-              Entropy solutions in BV<sup>s</sup> for a class of triangular
-              systems involving a transport equation.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.16820" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-02895603"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://epubs.siam.org/doi/10.1137/20M1351783"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>SIAM J. Math. Anal.</i> (2022)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame, D. Clamond and S. Junca.
-            <b>
-              Hamiltonian regularisation of the unidimensional barotropic Euler
-              equations.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.15261" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-02907304"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://www.sciencedirect.com/science/article/pii/S146812182100167X"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Nonlinear Anal. Real World Appl.</i> (2022)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            S. Ghoshal, B. Guelmame, A. Jana and S. Junca.
-            <b>
-              Optimal regularity for all time for entropy solutions of
-              conservation laws in BV<sup>s</sup>.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.15250" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-02495036"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
-            <a
-              href="https://link.springer.com/article/10.1007/s00030-020-00649-5"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Nonlinear Differential Equations Appl.</i> (2020)</a
-            >
-          </div>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <div>
-            B. Guelmame, S. Junca and D. Clamond.
-            <b>
-              Regularizing effect for conservation laws with a Lipschitz convex
-              flux.
-            </b>
-            <br />
-            <a href="https://arxiv.org/abs/2402.14967" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">arXiv</a>
-            &nbsp;
-            <a
-              href="https://hal.archives-ouvertes.fr/hal-01943834"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              >hal</a
-            >
-            &nbsp;
+         <li class="aligned-paragraph">
+           <b>2021–2022:</b> INSPE, Nice, France.
+           <ul>
+             <li>Teacher preparation course for the MEEF master’s programme (Métiers de l’enseignement, de l’éducation et de la formation).</li>
+           </ul>
+         </li>
 
-            <a
-              href="https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0017/0008/a006"
-              target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-              ><i>Commun. Math. Sci.</i> (2019)</a
-            >
-          </div>
-        </li>
-      </ol>
+         <li class="aligned-paragraph">
+           <b>2020–2021:</b> Université Côte d’Azur, Nice, France.
+           <ul>
+             <li>Maths Fondements 2 (Calculus)</li>
+             <li>Mathematical Methods: Mathematics and Engineering — derivatives, integrals, curves, series and Fourier transforms.</li>
+           </ul>
+         </li>
+         <li class="aligned-paragraph">
+           <b>2019–2020:</b> Université Côte d’Azur, Nice, France.
+           <ul>
+             <li>Mathematical Methods: Mathematics and Engineering — derivatives, integrals, curves, series and Fourier transforms.</li>
+           </ul>
+         </li>
+         <li class="aligned-paragraph">
+           <b>2018–2019:</b> Université Côte d’Azur, Nice, France.
+           <ul>
+             <li>Maths Fondement 2 (Calculus)</li>
+           </ul>
+         </li>
+       </ul>
+     </div><div id="Activities" class="page secondary-page">
+       <h2>Reviewing</h2>
 
-      <br />
+       <ul>
+         <li class="aligned-paragraph"><b>Journal peer review:</b> I have reviewed manuscripts for JMFM, DCDS, DCDS-S, MOFM and Proceedings of the London Mathematical Society.</li>
+         <li class="aligned-paragraph"><b>MathSciNet:</b> Reviewer for the American Mathematical Society.</li>
+         </ul>
 
-      <div class="custom-image-container">
-        <a href="https://nyuad.nyu.edu/" target="_blank"
-          ><img
-            alt="photo"
-            src="NYUAD.png"
-            style="width: 400px; height: 120px"
-        /></a>
-      </div>
+         <h2>Seminars, conferences and projects</h2>
 
-      <br />
-    </div>
+       <ul>
+         <li class="aligned-paragraph"><b>December 2025 – present:</b> Co-organiser of the <a href="https://wp.nyu.edu/abudhabi-math_postdoc_page/postdoc-seminar/" target="_blank" rel="noopener noreferrer">Math Postdoc Seminar</a> at NYU Abu Dhabi.</li><li class="aligned-paragraph"><b>2024 – present:</b> Co-organiser of the <a href="https://tassiliseminar.github.io/" target="_blank" rel="noopener noreferrer">Tassili Sunday Maths Seminar (TSMS)</a>.</li><li class="aligned-paragraph"><b>2019–2022:</b> Participant in the IFCAM (Indo-French Centre for Applied Mathematics) project Conservation Laws: BV<sup>s</sup>, Control and Interfaces. Principal investigators: S. S. Ghoshal (TIFR, Bangalore) and S. Junca (Université Côte d’Azur, Nice).</li>
+         <li class="aligned-paragraph"><b>2019:</b> Co-organiser of the <a href="https://univ-cotedazur.fr/laboratoires/laboratoire-jean-alexandre-dieudonne-ljad-1" target="_blank" rel="noopener noreferrer">LJAD</a> PhD student colloquium in Barcelonnette, France.</li>
+         </ul>
 
-    <div id="CV" class="page">
-      <h2>Curriculum vitae</h2>
-
-      <p class="paragraph-large aligned-paragraph">
-        Here is my CV as
-        <a
-          href="CV_Guelmame.pdf"
-          target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-          >PDF</a
-        >.
-      </p>
-
-      <br />
-
-      <ul>
-        <li class="aligned-paragraph">
-          <b> Dec 2024 - present: </b> Postdoctoral associate at New York University Abu Dhabi.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Sep 2022 - Dec 2024: </b> Postdoctoral associate at École Normale
-          Supérieure de Lyon.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Oct 2020 - Aug 2022: </b> Temporarily Attached to Education and
-          Research (ATER) at Côte d'Azur University, Nice.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Oct 2017 - Sep 2020: </b> PhD at the University Côte d'Azur, Nice,
-          with
-          <a href="https://math.univ-cotedazur.fr/~didierc/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-            >Didier Clamond</a
-          >
-          and
-          <a href="https://math.univ-cotedazur.fr/~junca/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-            >Stéphane Junca</a
-          >. Dissertation:
-          <a
-            href="https://tel.archives-ouvertes.fr/tel-03177654"
-            target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';"
-            >On a Hamiltonian regularisation and regularity of entropy solutions
-            of some nonlinear hyperbolic equations</a
-          >
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Sep 2016 - Jun 2017: </b> Second year of Master at Côte d'Azur
-          University, Nice.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Sep 2015 - Jun 2016: </b> First year of Master at Mostefa Ben
-          Boulaïd University, Batna-Algeria.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b> Sep 2012 - Jun 2015: </b> Bachelor's degree at Mostefa Ben Boulaïd
-          University, Batna-Algeria.
-        </li>
-        <br />
-      </ul>
-      <br />
-    </div>
-
-    <div id="Teaching" class="page">
-      <h2>Teaching</h2>
-      <br />
-      <ul>
-
-
-      <li class="aligned-paragraph">
-          <b>2025 - 2026:</b> New York University Abu Dhabi, Abu Dhabi, UAE.
-          <ul>
-            <li>Analysis 1</li>
-          </ul>
-        </li>
-        <br />
-
-
-        <li class="aligned-paragraph">
-          <b>2024 - 2025:</b> New York University Abu Dhabi, Abu Dhabi, UAE.
-          <ul>
-            <li>Analysis 1</li>
-          </ul>
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b>2023 - 2024:</b> Claude Bernard University, Lyon, France.
-          <ul>
-            <li>Maths - Cursus prépa (Analysis and algebra)</li>
-          </ul>
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b>2021 - 2022:</b> University Côte d'Azur, Nice, France.
-          <ul>
-            <li>Maths 2 (Linear algebra)</li>
-            <li>Maths Approfondissements 1 (Arithmetic)</li>
-            <li>Maths Approfondissements 2 (Calculus)</li>
-            <li>
-              Maths enjeux 1 (Introduction to fundamental mathematics concepts
-              for first-year students)
-            </li>
-            <li>Compléments de Mathematiques (Complex numbers)</li>
-          </ul>
-        </li>
-
-        <br />
-        <li class="aligned-paragraph">
-          <b>2021 - 2022:</b> INSPE, Nice, France.
-          <ul>
-            <li>
-              Course preparing students of Master “Métiers de l'Enseignement, de
-              l'Education et de la Formation” (MEEF)
-            </li>
-          </ul>
-        </li>
-
-        <br />
-        <li class="aligned-paragraph">
-          <b>2020 - 2021:</b> University Côte d'Azur, Nice, France.
-          <ul>
-            <li>Maths Fondements 2 (Calculus)</li>
-            <li>
-              Mathematical Methods: Mathematics and Engineering (Basic
-              mathematics: derivatives, integrals, curves, series, and Fourier
-              transformations, etc)
-            </li>
-          </ul>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <b>2019 - 2020:</b> University Côte d'Azur, Nice, France.
-          <ul>
-            <li>
-              Mathematical Methods: Mathematics and Engineering (Basic
-              mathematics: derivatives, integrals, curves, series, and Fourier
-              transformations, etc)
-            </li>
-          </ul>
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <b>2018 - 2019:</b> University Côte d'Azur, Nice, France.
-          <ul>
-            <li>Maths Fondement 2 (Calculus)</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    
-
-    <div id="Activities" class="page">
-      <h2>Review Activities</h2>
-
-      <ul>
-        <li class="aligned-paragraph">
-          <b>Journal peer-reviewer:</b> I reviewed manuscripts for JMFM, DCDS, DCDS-S, MOFM and Proc of LMS.
-        </li>
-        <br />
-
-        <li class="aligned-paragraph">
-          <b>MathScinet Reviews:</b> I am a reviewer for the American Mathematical Society.
-        </li>
-        <br />
-      </ul>
-
-        <br />
-
-      <h2>Seminars, conferences and projects </h2>
-
-      <ul>
-        <li class="aligned-paragraph">
-          <b>Dec 2025 - now:</b> Co-organizer of the <a href="https://wp.nyu.edu/abudhabi-math_postdoc_page/postdoc-seminar/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Math Postdoc Seminar
-</a> at NYUAD.
-        <br />
-        <br />
-        <li class="aligned-paragraph">
-          <b>2024 - now:</b> Co-organizer of the <a href="https://tassiliseminar.github.io/" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Tassili Sunday Maths Seminar (TSMS)</a>.
-        <br />
-        <br />
-        <li class="aligned-paragraph">
-          <b>2019 - 2022:</b> I was part of the IFCAM (Indo-French Center for Applied Mathematics) Project: 
-          <a href="https://ghoshal.tifrbng.res.in/shyam-sundar-ghoshal/ongoing-projects" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Conservation Laws: BV<sup>s</sup>, Control and Interfaces</a>.
-          <b>Principal Investigators:</b> S.S. Ghoshal (TIFR, Bangalore) and S. Junca (UCA, Nice)
-        </li>
-        <br />
-        <li class="aligned-paragraph">
-          <b>2019:</b> Co-organizer of the Colloquium of <a href="https://univ-cotedazur.fr/laboratoires/laboratoire-jean-alexandre-dieudonne-ljad-1" target="_blank" style="color:blue; text-decoration:none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">LJAD</a>'s PhD students, Barcelonnette, France
-        </li>
-        <br />
-      </ul>
-
-    </div>
-
-
-    <script>
-      const links = document.querySelectorAll("a");
-      links.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          if (this.getAttribute("href").startsWith("#")) {
-            e.preventDefault();
-            const targetPageId = this.getAttribute("href").substring(1);
-            const targetPage = document.getElementById(targetPageId);
-            const pages = document.querySelectorAll(".page");
-            pages.forEach((page) => {
-              page.classList.remove("active");
-            });
-            targetPage.classList.add("active");
-          } else {
-          }
-        });
-      });
-    </script>
-  </body>
-</html>
- 
+     </div><div class="university-logo"><a href="https://nyuad.nyu.edu/" target="_blank" rel="noopener noreferrer" aria-label="New York University Abu Dhabi"><img src="https://guelmame.perso.math.cnrs.fr/NYUAD.png" alt="New York University Abu Dhabi" width="400" height="120" loading="lazy"></a></div></main><footer class="site-footer"><span>Updated September 2026</span></footer><script>const pages = [...document.querySelectorAll('.page')];
+const links = [...document.querySelectorAll('.nav-links a')];
+function showPage() {
+  const id = location.hash.slice(1) || 'Home';
+  const target = document.getElementById(id);
+  const page = target?.closest('.page') || document.getElementById('Home');
+  pages.forEach(p => p.classList.toggle('active', p === page));
+  links.forEach(a => { if (a.hash === '#' + (target ? id : 'Home')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  if (target && target !== page) requestAnimationFrame(() => target.scrollIntoView());
+  else window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', showPage); showPage();</script></body></html>
